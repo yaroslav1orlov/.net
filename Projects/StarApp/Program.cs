@@ -6,7 +6,16 @@ namespace StarApp
     {
         static void Main()
         {
-            Console.WriteLine();
+            Console.WriteLine("-= StarApp =-");
+            Console.Write("Write any number: ");
+            var userImput = Console.ReadLine();
+
+            var lenght = int.Parse(userImput);
+            for (int i = 0; i < lenght; i++)
+            {
+                Console.Write("*");
+            }
+
         }
     }
 }
