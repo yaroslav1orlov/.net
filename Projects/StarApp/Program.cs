@@ -13,9 +13,8 @@ namespace StarApp
             var lenght = int.Parse(userImput);
             for (int i = 0; i < lenght; i++)
             {
-                Console.Write("*");
+                Console.WriteLine("+");
             }
-
         }
     }
 }
