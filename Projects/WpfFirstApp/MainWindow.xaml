@@ -5,11 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFirstApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-
+        Title="MainWindow" Topmost="True" Height="374" MinHeight="374" Width="458" MinWidth="458">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="46"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -19,23 +18,46 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="3" Grid.ColumnSpan="3" Background="White">
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Grid.Row="1" Click="Button_Click">Hotkey setings</Button>
-            <Button Grid.Column="1" Grid.Row="0" Click="Button_Click">Stop (F5)</Button>
-            <Button Grid.Column="0" Grid.Row="0" Click="Button_Click">Start (F5)</Button>
-            <Button Grid.Column="1" Grid.Row="1" Click="Button_Click">Test on click(0)</Button>
-        </Grid>
-        <StackPanel Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <TextBlock>Текст1</TextBlock>
-            <TextBlock Text="Текст2" />
-        </StackPanel>
+
+        <GroupBox Header="Click interval" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
+            <UniformGrid Columns="4">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox>0</TextBox>
+                    <Label>hours</Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox>0</TextBox>
+                    <Label>mins</Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox>0</TextBox>
+                    <Label>secs</Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox>1</TextBox>
+                    <Label>millisecs</Label>
+                </StackPanel>
+            </UniformGrid>
+        </GroupBox>
+        <ComboBox Grid.Row="1" Grid.Column="0">
+            <ComboBoxItem>Left</ComboBoxItem>
+            <ComboBoxItem>Right</ComboBoxItem>
+            <ComboBoxItem>Middle</ComboBoxItem>
+        </ComboBox>
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="Настройки">
+            <!-- Здесь могут быть другие элементы управления -->
+            <StackPanel>
+                <CheckBox Content="Опция 1" />
+                <CheckBox Content="Опция 2" />
+                <CheckBox Content="Опция 3" />
+            </StackPanel>
+        </GroupBox>
+
+        <UniformGrid Grid.Row="3" Grid.ColumnSpan="3" Columns="2" Background="White">
+            <Button Click="Button_Click">Start (F5)</Button>
+            <Button Click="Button_Click">Hotkey setings</Button>
+            <Button Click="Button_Click">Stop (F5)</Button>
+            <Button Click="Button_Click">Test on click(0)</Button>
+        </UniformGrid>
     </Grid>
 </Window>
